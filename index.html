@@ -1,10 +1,418 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Testing Page</title>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Consistent Video Restoration Through Turbulence with
+        Test-time Optimization of Neural Video Representations">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ConVRT: Consistent Video Restoration Through Turbulence with
+    Test-time Optimization of Neural Video Representations</title>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a test HTML page.</p>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-size-2 publication-title">ConVRT: Consistent Video Restoration Through Turbulence with Test-time Optimization of Neural Video Representations</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.haomingcai.com/">Haoming Cai*</a><sup>1</sup>,  
+              <a href="https://codingrex.github.io/">Jingxi Chen*</a><sup>1</sup>,
+              <a href="https://brandonyfeng.github.io/">Brandon Y. Feng</a><sup>2</sup>,
+              <a href="https://www.linkedin.com/in/wyjiang/">Weiyun Jiang</a><sup>3</sup>,
+              <a href="https://mingyangx.github.io/">Mingyang Xie</a><sup>1</sup>,
+              <a href="https://kevinwzhang.com/">Kevin Zhang</a><sup>1</sup>,
+              <a href="https://profiles.rice.edu/faculty/ashok-veeraraghavan">Ashok Veeraraghavan</a><sup>3</sup>,
+              <a href="http://www.cs.umd.edu/~metzler/">Christopher Metzler</a><sup>1</sup>
+
+
+              <sup></sup>
+
+            
+            </span>
+              
+              
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Maryland, College Park</span>
+            <span class="author-block"><sup> &nbsp &nbsp 2</sup>Massachusetts Institute of Technology</span>
+            <span class="author-block"><sup> &nbsp &nbsp 3</sup>Rice University</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://github.com/HaomingCai/ConVRT"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/HaomingCai/ConVRT"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+ 
+    </div>
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser _box.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">ConVRT</span> removes turbulence
+          from input video and turn it into sharp and temporally consistent video.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/09.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/03.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/108.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/164.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<section class="hero teaser">
+      <div class="container is-max-desktop"></div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Comparison with State-of-the-Art Methods </h2>
+          </h2>
+      </div>
+    </div>
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-5">Per-Frame Restoration Quality</h2>
+          <p>
+            <i>ConVRT</i> offers sharper and more accurate per-frame turbulence removal than state-of-the-art methods:
+             <a href="https://arxiv.org/abs/2207.10040">TurbNet</a> and <a href="https://www.nature.com/articles/s42256-021-00392-1">TSR-WGAN</a>.
+          </p>
+
+          <p>
+            On synthetic videos:
+  
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sharpness_syn_vid.mp4"
+                      type="video/mp4">
+  
+  
+          </p>
+          <p>
+           On real-world videos:
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/sharpness_real_vid.mp4"
+                    type="video/mp4">
+                    
+          </video>
+        </p>
+        
+          
+
+        
+        </div>
+      </div>
+    </div>
+
+
+      <div class="columns is-centered">
+
+        <!-- Visual Effects. -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-5">Temporal Consistency Quality</h2>
+            <p>
+              <i>ConVRT</i> also offers better temporal consistency compared to 
+              state-of-the-art methods like <a href="https://arxiv.org/abs/2207.10040">TurbNet</a> and <a href="https://www.nature.com/articles/s42256-021-00392-1">TSR-WGAN</a>.
+            </p>
+
+            <p>
+              On synthetic videos:
+    
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/klt_xt_syn.mp4"
+                        type="video/mp4">
+    
+            </p>
+
+            <p>
+             On real-world videos:
+            
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/klt_xt_real.mp4"
+                      type="video/mp4">
+                      
+            </video>
+          </p>
+          
+            
+  
+          
+          </div>
+        </div>
+      </div>
+  
+  
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Interpolating Frames</h3>
+        <div class="content has-text-justified">
+          <p>
+            Our latent image representation allows us to smoothly interpolate between frames. 
+            Use the slider to linearly interpolate between the left frame and the right frame below.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="1" max="152" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/> 
+
+    <!--/ Animation. -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Atmospheric turbulence presents a significant challenge
+             in long-range imaging. Current restoration algorithms often 
+             struggle with temporal inconsistency, 
+             as well as limited generalization ability across varying turbulence levels and scene content different than the training data.
+          </p>
+          <p>
+            To tackle these issues, we introduce a self-supervised method, 
+            Consistent Video Restoration through Turbulence (<span class="dnerf">ConVRT</span>) a test-time optimization method featuring a 
+            neural video representation designed 
+            to enhance temporal consistency in restoration.
+          </p>
+          <p>
+            A key innovation of ConVRT is the integration of a pretrained vision-language model (CLIP) for semantic-oriented supervision, which steers the restoration towards sharp, photorealistic images in the CLIP latent space. 
+We further develop a principled selection strategy of text prompts, based on their statistical correlation with a perceptual metric.
+          </p>
+          <p>
+            ConVRT's test-time optimization allows it to adapt to a 
+            wide range of real-world turbulence conditions, effectively leveraging the insights gained from pre-trained models on simulated data. ConVRT offers a comprehensive and effective solution
+             for mitigating real-world turbulence in dynamic videos.            
+          </p>
+
+          
+            <img src="./static/images/methods.PNG"
+                 class="interpolation-image"
+                 alt="methods"/>
+          
+          
+
+
+        </div>
+      </div>
+    </div>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop"></div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">More Results  </h2>
+          </h2>
+      </div>
+    </div>
+
+</section>
+
+On synthetic videos:
+
+
+<video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+  <source src="./static/videos/more_syn_1.mp4"
+          type="video/mp4">
+          
+</video>
+</p>
+<p>
+
+<video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+  <source src="./static/videos/more_syn_2.mp4"
+          type="video/mp4">
+
+
+
+</p>
+
+On real-world videos:
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more_real_1.mp4"
+                    type="video/mp4">
+                    
+          </video>
+        </p>
+        <p>
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more_real_2.mp4"
+                    type="video/mp4">
+
+
+
+        </p>
+
+        
+
+  </div>
+  
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The webpage template is borrowed from  <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a> template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
