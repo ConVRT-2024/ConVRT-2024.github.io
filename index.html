@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Consistent Video Restoration Through Turbulence with
+        Test-time Optimization of Neural Video Representations">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporally Consistent Atmospheric Turbulence Mitigation with Neural Representations</title>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Temporally Consistent Atmospheric Turbulence Mitigation with Neural Representations</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.haomingcai.com/">Haoming Cai*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://codingrex.github.io/">Jingxi Chen*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://brandonyfeng.github.io/">Brandon Feng</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://weiyunjiang.github.io/">Weiyun Jiang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://mingyangx.github.io/">Mingyang Xie</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kevinwzhang.com/">Kevin Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://users.umiacs.umd.edu/~fer/">Cornelia Fermuller</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=7QmEsOwAAAAJ&hl=en">Yiannis Aloimonos</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=tI-oUmsAAAAJ&hl=en">Ashok Veeraraghavan</a><sup>3</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=on7GFpYAAAAJ&hl=en">Chris Metzler</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Maryland,</span>
+            <span class="author-block"><sup>2</sup>MIT,</span>
+            <span class="author-block"><sup>3</sup>Rice University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://neurips.cc/virtual/2024/poster/93017"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+
+
+  <div class="columns is-centered">
+
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <!-- <h2 class="title is-5">Challengs Asscoiated with Real-world Atmospheric Turbulence Mitigation</h2>
+         
+          <p>
+            General video restoration methods, such as VRT, struggle with complex degradations like turbulence, which involves spatially varying blur kernels. 
+            Current supervised learning techniques in atmospheric turbulence mitigation (ATM) often rely heavily on accurate turbulence simulators. 
+            However, these simulators still fall short of accurately replicating real-world turbulence.
+          </br> -->
+
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Challenge_vid.mp4"
+                    type="video/mp4">
+                    
+          </video>
+
+
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <!-- <h2 class="title is-5">Comparison with State-of-the-art methods</h2>
+         
+          <p>
+           On real-world videos:
+          </br>
+           <b> 1. On CLEAR Dataset: </b> -->
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Clear_vid.mp4"
+                    type="video/mp4">
+                    
+          </video>
+
+          <!-- <b> 2. On TSR-WGAN Dataset: </b> -->
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/TSRWGAN.mp4"
+                    type="video/mp4">
+                    
+          </video>
+
+        </p>
+
+
+        <p>
+          <!-- <b> 4. On Youtube Video: </b> -->
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/youtube.mp4"
+                    type="video/mp4">
+
+
+
+        </p>
+          
+        <p>
+          <!-- <b> 3. On OTIS Dataset: </b> -->
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/OTIS_vid.mp4"
+                    type="video/mp4">
+
+
+
+        </p>
+
+        
+        </div>
+      </div>
+    </div>
+
+
+      <!-- <div class="columns is-centered">
+
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-5">Temporal Consistency Quality</h2>
+            <p>
+              <i>ConVRT</i> also offers better temporal consistency compared to 
+              state-of-the-art methods like <a href="https://arxiv.org/abs/2207.10040">TurbNet</a> and <a href="https://www.nature.com/articles/s42256-021-00392-1">TSR-WGAN</a>.
+            </p>
+            <p>
+             On real-world videos:
+            
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/klt_xt_real.mp4"
+                      type="video/mp4">
+                      
+            </video>
+          </p>
+          <p>
+            On synthetic videos:
+  
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/klt_xt_syn.mp4"
+                      type="video/mp4">
+  
+          </p>
+            
+  
+          
+          </div>
+        </div>
+      </div> -->
+  
+  
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating Frames</h3>
+        <div class="content has-text-justified">
+          <p>
+            Our latent image representation allows us to smoothly interpolate between frames. 
+            Use the slider to linearly interpolate between the left frame and the right frame below.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="1" max="152" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div> -->
+        <br/> 
+
+    <!--/ Animation. -->
+
+    <!-- <section class="hero teaser">
+      <div class="container is-max-desktop"></div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">More Results  </h2>
+          </h2>
+      </div>
+    </div>
+
+</section> -->
+
+<!-- On real-world videos:
+
+
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more_real_1.mp4"
+                    type="video/mp4">
+                    
+          </video>
+        </p>
+        <p>
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more_real_2.mp4"
+                    type="video/mp4">
+
+
+
+        </p>
+        On synthetic videos:
+
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/more_syn_1.mp4"
+                  type="video/mp4">
+                  
+        </video>
+      </p>
+      <p>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/more_syn_2.mp4"
+                  type="video/mp4">
+
+
+
+      </p>
+        
+
+  </div>
+  
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Atmospheric turbulence, caused by random fluctuations in the atmosphere’s refractive index, introduces complex spatio-temporal distortions in imagery captured at long range. Video Atmospheric Turbulence Mitigation (ATM) aims to restore videos affected by these distortions. However, existing video ATM methods, both supervised and self-supervised, struggle to maintain temporally consistent mitigation across frames, leading to visually incoherent results. This limitation arises from the stochastic nature of atmospheric turbulence, which varies across space and time. Inspired by the observation that atmospheric turbulence induces high-frequency temporal variations, we propose ConVRT, a novel framework for consistent video restoration through turbulence. ConVRT introduces a neural video representation that explicitly decouples spatial and temporal information into a spatial content field and a temporal deformation field, enabling targeted regularization of the network’s temporal representation capability. By leveraging the low-pass filtering properties of the regularized temporal representations, ConVRT effectively mitigates turbulence-induced temporal frequency variations and promotes temporal consistency. Furthermore, our training framework seamlessly integrates supervised pre-training on synthetic turbulence data with self-supervised learning on real-world videos, significantly improving the temporally consistent mitigation of ATM methods on diverse real-world data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            This website is under construction. Please check back later.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The webpage template is borrowed from  <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a> template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
