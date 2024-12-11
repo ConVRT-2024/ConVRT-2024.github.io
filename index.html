@@ -116,216 +116,60 @@
 </section>
 
 
-<section class="section">
-
-
-  <div class="columns is-centered">
-
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <!-- <h2 class="title is-5">Challengs Asscoiated with Real-world Atmospheric Turbulence Mitigation</h2>
-         
-          <p>
-            General video restoration methods, such as VRT, struggle with complex degradations like turbulence, which involves spatially varying blur kernels. 
-            Current supervised learning techniques in atmospheric turbulence mitigation (ATM) often rely heavily on accurate turbulence simulators. 
-            However, these simulators still fall short of accurately replicating real-world turbulence.
-          </br> -->
-
-          
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Challenge_vid.mp4"
-                    type="video/mp4">
-                    
-          </video>
-
-
-        
-        </div>
-      </div>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/Challenge_vid.mp4"
+                type="video/mp4">
+      </video>
     </div>
-
-    <div class="columns is-centered">
-
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <!-- <h2 class="title is-5">Comparison with State-of-the-art methods</h2>
-         
-          <p>
-           On real-world videos:
-          </br>
-           <b> 1. On CLEAR Dataset: </b> -->
-          
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/Clear_vid.mp4"
-                    type="video/mp4">
-                    
-          </video>
-
-          <!-- <b> 2. On TSR-WGAN Dataset: </b> -->
-          
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/TSRWGAN.mp4"
-                    type="video/mp4">
-                    
-          </video>
-
-        </p>
-
-
-        <p>
-          <!-- <b> 4. On Youtube Video: </b> -->
-
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/youtube.mp4"
-                    type="video/mp4">
-
-
-
-        </p>
-          
-        <p>
-          <!-- <b> 3. On OTIS Dataset: </b> -->
-
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/OTIS_vid.mp4"
-                    type="video/mp4">
-
-
-
-        </p>
-
-        
-        </div>
-      </div>
-    </div>
-
-
-      <!-- <div class="columns is-centered">
-
-
-        <div class="column">
-          <div class="content">
-            <h2 class="title is-5">Temporal Consistency Quality</h2>
-            <p>
-              <i>ConVRT</i> also offers better temporal consistency compared to 
-              state-of-the-art methods like <a href="https://arxiv.org/abs/2207.10040">TurbNet</a> and <a href="https://www.nature.com/articles/s42256-021-00392-1">TSR-WGAN</a>.
-            </p>
-            <p>
-             On real-world videos:
-            
-            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/klt_xt_real.mp4"
-                      type="video/mp4">
-                      
-            </video>
-          </p>
-          <p>
-            On synthetic videos:
-  
-            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/klt_xt_syn.mp4"
-                      type="video/mp4">
-  
-          </p>
-            
-  
-          
-          </div>
-        </div>
-      </div> -->
-  
-  
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Interpolating Frames</h3>
-        <div class="content has-text-justified">
-          <p>
-            Our latent image representation allows us to smoothly interpolate between frames. 
-            Use the slider to linearly interpolate between the left frame and the right frame below.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="1" max="152" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div> -->
-        <br/> 
-
-    <!--/ Animation. -->
-
-    <!-- <section class="hero teaser">
-      <div class="container is-max-desktop"></div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">More Results  </h2>
-          </h2>
-      </div>
-    </div>
-
-</section> -->
-
-<!-- On real-world videos:
-
-
-          
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/more_real_1.mp4"
-                    type="video/mp4">
-                    
-          </video>
-        </p>
-        <p>
-
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/more_real_2.mp4"
-                    type="video/mp4">
-
-
-
-        </p>
-        On synthetic videos:
-
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/more_syn_1.mp4"
-                  type="video/mp4">
-                  
-        </video>
-      </p>
-      <p>
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/more_syn_2.mp4"
-                  type="video/mp4">
-
-
-
-      </p>
-        
-
   </div>
-  
-</section> -->
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/Clear_vid.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/TSRWGAN.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/youtube.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/OTIS_vid.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
 
 
 <section class="section">
